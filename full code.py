@@ -148,5 +148,3 @@ print(final_average_speed)
 file_path = "result.txt" 
 with open(file_path, 'w') as file:
     file.write(final_speed)
-
-print("Data written to", file_path)
