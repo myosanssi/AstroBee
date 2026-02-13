@@ -78,6 +78,12 @@ if len(results) == 2:
     
     def HaversineFormula(lat1, long1, lat2, long2):
         '''
+        Calculates the shortest distance between two coordinates
+        :param lat1: latitude of the first coordinate
+        :param long1: longitude of the second coordinate
+        :param lat2: latitude of the second coordinate
+        :param long2: longitude of the second coordinate
+        :return: distance
         '''
         radlat1 = math.radians(lat1)
         radlat2 = math.radians(lat2)
@@ -92,8 +98,13 @@ if len(results) == 2:
         distance = 6371 * angle
         
         return distance
-    def SpeedFormula(distance, time):
+    def SpeedFormula(distance, time1, time2):
         '''
+        Calculates the speed
+        :param distance: distance calculated with the previous function
+        :param time1: Unix time of the first picture
+        :param time2: Unix time of the second picture
+        :return: speed between two coordinates
         '''
         speed = distance/(time2 - time1)
         return speed
