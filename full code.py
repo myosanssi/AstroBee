@@ -17,6 +17,9 @@ while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code 
     # Noah's code!
     def dms_to_decimal(dms):
         '''
+        Takes deg, mins, and seconds and converts them to decimals
+        :param dms: degrees, minutes, and seconds of the images
+        :return: dsm in decimals
         '''
         degrees, minutes, seconds = dms
         return degrees + minutes / 60 + seconds / 3600
