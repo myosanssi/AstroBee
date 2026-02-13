@@ -11,7 +11,10 @@ now_time = datetime.now()
 while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code could take longer
    
     cam = Camera()
-    cam.capture_sequence("sequence", num_images=2, interval=2)
+   image_path = base_folder / f"image.jpg"
+   cam.take_photo(str(image_path))
+
+   
 
 
     # Noah's code!
