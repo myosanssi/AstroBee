@@ -107,15 +107,17 @@ That averages velocities & appends them to a list
 list_speed = []
 def into_the_list(speed):
     '''
-    variable: the calculated speed of the ISS
-    get the speed from the other function and add it one by one to the list called "list_speed"
+    get the speeds from "SpeedFormula" and add them to the list called "list_speed"
+    :param: the calculated speed of the ISS
+    :return: the list of the speed ("list_speed")
     '''
     list_speed.append(speed)
 
 def average_speed(list_speed):
     '''
-    variable: the list that contains all the speed
     calculate the average speed from the list
+    :param: the list that contains all the speeds 
+    :return: the average speed
     '''
     sum_speed = 0
     for num in list_speed:
