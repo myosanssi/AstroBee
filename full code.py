@@ -124,3 +124,9 @@ while (now_time < start_time + timedelta(minutes=9)): #minutes != 10 b/c code co
 str_average_speed = str(average_speed)
 final_speed = str_average_speed[0:7]
 print(final_average_speed)
+
+file_path = "result.txt" 
+with open(file_path, 'w') as file:
+    file.write(final_speed)
+
+print("Data written to", file_path)
