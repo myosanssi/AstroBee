@@ -2,10 +2,13 @@
 ## Hey Hey Hey! Welcome to our Repo!
 ## Here are the taks to be done:
 ### Arij
-- one
+- Function of the velocities of Earth and ISS
 ### Danah
-- two
+- Coordinates to angular speed
+- Function that stops the code after 600s
+- Code that trims significant figures
 ### Yui
-- three
+- Function that stores velocities into a list
+- Function that averages the velocities (from list)
 ### Noah
-- four
+- Get data from images (coordinates and Unix time)
