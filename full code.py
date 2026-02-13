@@ -37,7 +37,7 @@ now_time = datetime.now()
 
 while (now_time < start_time + timedelta(minutes=9)): #minutes != 10 b/c code could take longer
     print("The rest of the code comes here✨✨")
-    sleep(10) #the interval from which the 'hello' gets sent
+    sleep(0.5) #the interval from which the code gets run through
     now_time = datetime.now()
 
 str_average_speed = str(average_speed)
