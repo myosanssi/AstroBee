@@ -1,4 +1,9 @@
 #add you code here!
+#Libraries/Imports
+from datetime import datetime, timedelta #Danah
+from time import sleep #Danah
+import math #Arij
+
 '''
 This is Yui's code
 That averages velocities & appends them to a list
@@ -29,9 +34,6 @@ This is Danah's code
 One is for the code to stop after 10 mins
 The other is for trimming sig figs
 '''
-from datetime import datetime, timedelta
-from time import sleep
-
 start_time = datetime.now()
 now_time = datetime.now()
 
@@ -48,7 +50,6 @@ print(final_average_speed)
 this is Arij's code
 I will use certain terminology that we will modify once we put everything together
 '''
-import math
 def HaversineFormula(lat1, long1, lat2, long2):
   radlat1 = math.radians(lat1)
   radlat2 = math.radians(lat2)
