@@ -62,6 +62,16 @@ this is Arij's code
 I will use certain terminology that we will modify once we put everything together
 '''
 if len(results) == 2:
+    data1 = results[0]
+    lat1 = data1[1]
+    long1 = data1[2]
+    time1 = data1[3]
+    
+    data2 = results[1]
+    lat2 = data2[1]
+    long2 = data2[2]
+    time2 = data2[3]
+    
     def HaversineFormula(lat1, long1, lat2, long2):
         radlat1 = math.radians(lat1)
         radlat2 = math.radians(lat2)
@@ -77,7 +87,7 @@ if len(results) == 2:
         
         return distance
     def SpeedFormula(distance, time):
-        speed = distance/time
+        speed = distance/(time2 - time1)
         return speed
     
     results.pop(0)
