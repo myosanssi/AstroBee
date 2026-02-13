@@ -6,6 +6,8 @@ from time import sleep #Danah
 import math #Arij
 from picamzero import Camera
 
+start_time = datetime.now()
+now_time = datetime.now()
 while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code could take longer
    
     cam = Camera()
@@ -145,13 +147,9 @@ while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code 
 
         '''
         This is Danah's code
-        One is for the code to stop after 10 mins
         The other is for trimming sig figs
         '''
-        start_time = datetime.now()
-        now_time = datetime.now()
 
-        #Danah's code
         str_average_speed = str(average_speed)
         final_speed = "{:.4f}".format(str_average_speed)
         print(final_average_speed)
