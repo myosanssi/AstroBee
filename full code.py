@@ -90,13 +90,9 @@ start_time = datetime.now()
 now_time = datetime.now()
 
 while (now_time < start_time + timedelta(minutes=9)): #minutes != 10 b/c code could take longer
-    print("The rest of the code comes here✨✨")
+    print("The code comes here✨✨")
     sleep(0.5) #the interval from which the code gets run through
     now_time = datetime.now()
-
-str_average_speed = str(average_speed)
-final_speed = str_average_speed[0:7]
-print(final_average_speed)
 
 '''
 this is Arij's code
@@ -120,3 +116,8 @@ def HaversineFormula(lat1, long1, lat2, long2):
 def VelocityFormula(distance, time):
   velocity = distance/time
   return velocity
+
+#Danah's code
+str_average_speed = str(average_speed)
+final_speed = str_average_speed[0:7]
+print(final_average_speed)
