@@ -6,6 +6,9 @@ from time import sleep #Danah
 import math #Arij
 from picamzero import Camera
 
+from pathlib import Path
+base_folder = Path(__file__).parent.resolve()
+
 while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code could take longer
     print("The code comes here✨✨")
     sleep(0.5) #the interval from which the code gets run through
