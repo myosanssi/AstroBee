@@ -142,7 +142,7 @@ while (now_time < start_time + timedelta(minutes=9)): #minutes != 10 b/c code co
 
 #Danah's code
 str_average_speed = str(average_speed)
-final_speed = str_average_speed[0:7]
+final_speed = "{:.4f}".format(str_average_speed)
 print(final_average_speed)
 
 file_path = "result.txt" 
