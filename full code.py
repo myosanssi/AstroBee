@@ -7,10 +7,14 @@ import math #Arij
 
 # Noah's code!
 def dms_to_decimal(dms):
+    '''
+    '''
     degrees, minutes, seconds = dms
     return degrees + minutes / 60 + seconds / 3600
 
 def extract_data(image_path):
+    '''
+    '''
     with open(image_path, 'rb') as image_file:
         img = Image(image_file)
 
@@ -73,6 +77,8 @@ if len(results) == 2:
     time2 = data2[3]
     
     def HaversineFormula(lat1, long1, lat2, long2):
+        '''
+        '''
         radlat1 = math.radians(lat1)
         radlat2 = math.radians(lat2)
         radlong1 = math.radians(long1)
@@ -87,6 +93,8 @@ if len(results) == 2:
         
         return distance
     def SpeedFormula(distance, time):
+        '''
+        '''
         speed = distance/(time2 - time1)
         return speed
     
