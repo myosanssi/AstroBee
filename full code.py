@@ -1,9 +1,11 @@
+#Libraries/Imports
+from datetime import datetime, timedelta #Danah & Noah
+from exif import Image #Noah
+import os #Noah
+from time import sleep #Danah
+import math #Arij
+
 # Noah's code!
-
-from exif import Image
-from datetime import datetime
-import os
-
 def dms_to_decimal(dms):
     degrees, minutes, seconds = dms
     return degrees + minutes / 60 + seconds / 3600
@@ -54,13 +56,6 @@ for filename in os.listdir(folder):
 
         print(results)
         
-
-#add you code here!
-#Libraries/Imports
-from datetime import datetime, timedelta #Danah
-from time import sleep #Danah
-import math #Arij
-
 '''
 This is Yui's code
 That averages velocities & appends them to a list
