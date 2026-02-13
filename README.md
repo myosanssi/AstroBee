@@ -8,7 +8,7 @@
 - Function that stops the code after 600s ✅
 - Code that trims significant figures ✅
 ### Yui
-- Function that stores velocities into a list
-- Function that averages the velocities (from list)
+- Function that stores velocities into a list ✅
+- Function that averages the velocities (from list) ✅
 ### Noah
 - Get data from images (coordinates and Unix time) ✅
