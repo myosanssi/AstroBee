@@ -1,3 +1,60 @@
+# Noah's code!
+
+from exif import Image
+from datetime import datetime
+import os
+
+def dms_to_decimal(dms):
+    degrees, minutes, seconds = dms
+    return degrees + minutes / 60 + seconds / 3600
+
+def extract_data(image_path):
+    with open(image_path, 'rb') as image_file:
+        img = Image(image_file)
+
+        latitude = dms_to_decimal(img.gps_latitude)
+        longitude = dms_to_decimal(img.gps_longitude)
+
+        dt = datetime.strptime(
+            img.datetime_original,
+            "%Y:%m:%d %H:%M:%S"
+        )
+        unix_time = dt.timestamp()
+
+        return latitude, longitude, unix_time
+    
+#    lat, lon, time = extract_data("ExamplePhotos/image1.jpg")
+#   print("latitude:", lat)
+#   print("longitude:", lon)
+#   print("time:", time)
+
+
+# loop:
+
+folder = "ExamplePhotos"
+results = []
+
+for filename in os.listdir(folder):
+    if filename.endswith(".jpg") or filename.endswith(".JPG"):
+
+        full_path = os.path.join(folder, filename)
+
+        lat, lon, time = extract_data(full_path)
+        results.append((filename, lat, lon, time))
+
+# for testing:
+
+        print(filename)
+        print("Latitude:", lat)
+        print("Longitude:", lon)
+        print("Time:", time)
+        print("------")
+
+# for list (results):
+
+        print(results)
+        
+
 #add you code here!
 #Libraries/Imports
 from datetime import datetime, timedelta #Danah
