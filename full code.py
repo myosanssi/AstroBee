@@ -20,7 +20,7 @@ while (now_time < start_time + timedelta(minutes=9)): #minutes != 10 b/c code co
 speed = 7.74686573629 #this is only an example
 str_speed = str(speed)
 final_speed = str_speed[0:7]
-print(final_speed
+print(final_speed)
 
 '''
 this is Arij's code
