@@ -103,7 +103,7 @@ def average_speed(list_speed):
     for num in list_speed:
         sum_speed += num
     average_speed = float(sum_speed/len(list_speed))
-    print(f'The average speed is {average_speed}')
+    return speed
 
  average_speed(list_speed)
 
