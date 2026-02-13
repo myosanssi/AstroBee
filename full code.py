@@ -40,8 +40,6 @@ while (now_time < start_time + timedelta(minutes=9)): #minutes != 10 b/c code co
     sleep(10) #the interval from which the 'hello' gets sent
     now_time = datetime.now()
 
-
-average_speed = 7.74686573629 #this is only an example
 str_average_speed = str(average_speed)
 final_speed = str_average_speed[0:7]
 print(final_average_speed)
