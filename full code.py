@@ -29,7 +29,7 @@ This is Danah's code
 One is for the code to stop after 10 mins
 The other is for trimming sig figs
 '''
-import datetime
+from datetiem import datetime, timedelta
 from time import sleep
 
 start_time = datetime.now()
