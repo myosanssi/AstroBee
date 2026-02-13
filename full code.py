@@ -116,33 +116,31 @@ if len(results) == 2:
         return speed
     
     results.pop(0)
-
-'''
-This is Yui's code
-That averages velocities & appends them to a list
-'''
-list_speed = []
-def into_the_list(speed):
     '''
-    get the speeds from "SpeedFormula" and add them to the list called "list_speed"
-    :param: the calculated speed of the ISS
-    :return: the list of the speed ("list_speed")
+    This is Yui's code
+    That averages velocities & appends them to a list
     '''
-    list_speed.append(speed)
-
-def average_speed(list_speed):
-    '''
-    calculate the average speed from the list
-    :param: the list that contains all the speeds 
-    :return: the average speed
-    '''
-    sum_speed = 0
-    for num in list_speed:
-        sum_speed += num
-    average_speed = float(sum_speed/len(list_speed))
-    return speed
-
- average_speed(list_speed)
+    list_speed = []
+    def into_the_list(speed):
+        '''
+        get the speeds from "SpeedFormula" and add them to the list called "list_speed"
+        :param: the calculated speed of the ISS
+        :return: the list of the speed ("list_speed")
+        '''
+        list_speed.append(speed)
+    
+    def average_speed(list_speed):
+        '''
+        calculate the average speed from the list
+        :param: the list that contains all the speeds 
+        :return: the average speed
+        '''
+        sum_speed = 0
+        for num in list_speed:
+            sum_speed += num
+            average_speed = float(sum_speed/len(list_speed))
+        return average_speed
+    average_speed(list_speed)
 
 '''
 This is Danah's code
