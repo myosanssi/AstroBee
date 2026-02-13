@@ -4,6 +4,12 @@ from exif import Image #Noah
 import os #Noah
 from time import sleep #Danah
 import math #Arij
+from picamzero import Camera
+
+cam = Camera()
+
+cam.capture_sequence("sequence", num_images=2, interval=2)
+
 
 # Noah's code!
 def dms_to_decimal(dms):
