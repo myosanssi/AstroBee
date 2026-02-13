@@ -76,10 +76,10 @@ def HaversineFormula(lat1, long1, lat2, long2):
 
   return distance
 
-def VelocityFormula(distance, time):
-  velocity = distance/time
-  return velocity
-    
+def SpeedFormula(distance, time):
+  speed = distance/time
+  return speed
+
 '''
 This is Yui's code
 That averages velocities & appends them to a list
