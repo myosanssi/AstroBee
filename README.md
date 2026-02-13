@@ -1,6 +1,6 @@
 # AstroBee
 ## Hey Hey Hey! Welcome to our Repo!
-## Here are the taks to be done:
+## Here are the tasks to be done:
 ### Arij
 - Function of the velocities of Earth and ISS
 ### Danah
