@@ -36,7 +36,7 @@ while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code 
             "%Y:%m:%d %H:%M:%S"
          )
          unix_time = dt.timestamp()
-         return latitude, longitude, unix_time
+      return latitude, longitude, unix_time
 
    '''
    #lat, lon, time = extract_data("ExamplePhotos/image1.jpg")
