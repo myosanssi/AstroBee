@@ -119,7 +119,7 @@ while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code 
       def into_the_list(speed):
          '''
          get the speeds from "SpeedFormula" and add them to the list called "list_speed"
-         :param: the calculated speed of the ISS
+         :param speed: the calculated speed of the ISS
          :return: the list of the speed ("list_speed")
          '''
          list_speed.append(speed)
@@ -129,7 +129,7 @@ while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code 
       def average_speed(list_speed):
          '''
          calculate the average speed from the list
-         :param: the list that contains all the speeds 
+         :param list_speed: the list that contains all the speeds 
          :return: the average speed
          '''
          sum_speed = 0
