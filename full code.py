@@ -174,6 +174,8 @@ but basically it sorts the pictures based on the time that was extracted from th
          :return: the list of the speed ("list_speed")
          '''
          list_speed.append(speed)
+      
+      into_the_list(speed)
          
       def average_speed(list_speed):
          '''
