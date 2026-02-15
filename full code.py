@@ -6,6 +6,10 @@ from time import sleep #Danah
 import math #Arij
 from picamzero import Camera
 
+folder = base_folder
+results = []
+list_speed = []
+
 start_time = datetime.now()
 now_time = datetime.now()
 while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code could take longer
@@ -85,8 +89,7 @@ but basically it sorts the pictures based on the time that was extracted from th
    #print("time:", time)
    '''
 
-   folder = base_folder
-   results = []
+
    for filename in os.listdir(folder):
       if filename.endswith(".jpg") or filename.endswith(".JPG"):
          full_path = os.path.join(folder, filename)
