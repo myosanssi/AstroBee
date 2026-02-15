@@ -31,7 +31,7 @@ def get_position():
     )
 
 
-while (now_time < start_time + timedelta(minutes=.33)): #minutes != 10 b/c code could take longer
+while (now_time < start_time + timedelta(minutes=9.5)): #minutes != 10 b/c code could take longer
     if number == 0:
        image_path = base_folder / f"imageA.jpg"
     elif number == 1:
