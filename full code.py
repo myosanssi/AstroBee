@@ -24,6 +24,9 @@ while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code 
    
    def extract_data(image_path):
       '''
+      Extracts data from images
+      :param image_path: the file path to the image
+      :return: latitude, longitude, and Unix time
       '''
       with open(image_path, 'rb') as image_file:
          img = Image(image_file)
