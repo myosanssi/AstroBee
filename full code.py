@@ -166,7 +166,7 @@ but basically it sorts the pictures based on the time that was extracted from th
       This is Yui's code
       That averages velocities & appends them to a list
       '''
-      list_speed = []
+   
       def into_the_list(speed):
          '''
          get the speeds from "SpeedFormula" and add them to the list called "list_speed"
