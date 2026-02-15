@@ -65,7 +65,8 @@ while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code 
       :returns: the time the picture was taken
       '''
       return data[3]
-   results.sort(key=get_time)
+   
+   results.sort(key=get_time)  ### sort the pictures in 'results' in the chronological order
 
    if len(results) == 2:
       data1 = results[0]
