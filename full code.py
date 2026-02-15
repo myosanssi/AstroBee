@@ -5,8 +5,10 @@ import os #Noah
 from time import sleep #Danah
 import math #Arij
 from picamzero import Camera
+from pathlib import Path
 
 folder = base_folder
+base_folder = Path(__file__).parent.resolve()
 results = []
 list_speed = []
 
