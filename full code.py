@@ -34,7 +34,10 @@ while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code 
 
 　 also, before the line 105, I need to put
    def get_time(data):
-       return data[3]
+      Gives the time from a picture's data
+      :param data: choosing the picture's data
+      :returns: the time the picture was taken
+      return data[3]
    results.sort(key=get_time)
 
 
@@ -82,36 +85,12 @@ but basically it sorts the pictures based on the time that was extracted from th
          unix_time = dt.timestamp()
       return latitude, longitude, unix_time
 
-   '''
-   #lat, lon, time = extract_data("ExamplePhotos/image1.jpg")
-   #print("latitude:", lat)
-   #print("longitude:", lon)
-   #print("time:", time)
-   '''
-
-
    for filename in os.listdir(folder):
       if filename.endswith(".jpg") or filename.endswith(".JPG"):
          full_path = os.path.join(folder, filename)
          lat, lon, time = extract_data(full_path)
          results.append((filename, lat, lon, time))
 
-   '''
-   for testing:
-   print(filename)
-   print("Latitude:", lat)
-   print("Longitude:", lon)
-   print("Time:", time)
-   print("------")
-   
-   for list (results):
-   print(results)
-   '''
-   
-   '''
-   this is Arij's code
-   This turns the latitude and longitude into distance and calculates the speed
-   '''
    if len(results) == 2:
       data1 = results[0]
       lat1 = data1[1]
@@ -162,11 +141,7 @@ but basically it sorts the pictures based on the time that was extracted from th
       speed = SpeedFormula(dis, time1, time2)
       
       results.pop(0)
-      '''
-      This is Yui's code
-      That averages velocities & appends them to a list
-      '''
-   
+      
       def into_the_list(speed):
          '''
          get the speeds from "SpeedFormula" and add them to the list called "list_speed"
@@ -188,13 +163,8 @@ but basically it sorts the pictures based on the time that was extracted from th
             sum_speed += num
             average_speed = float(sum_speed/len(list_speed))
          return average_speed
-      
-   '''
-   This is Danah's code
-   The is for trimming sig figs
-   '''
-   str_average_speed = str(average_speed(list_speed))
-   final_speed = "{:.4f}".format(str_average_speed)
+   
+   final_speed = "{:.4g}".format(average_speed(list_speed))
    print(final_speed)
    
    sleep(0.5) #the interval from which the code gets run through
