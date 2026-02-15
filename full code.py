@@ -56,7 +56,6 @@ while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code 
          lat, lon, time = extract_data(full_path)
          results.append((filename, lat, lon, time))
   
-### added the code here
    def get_time(data):
       '''
       Gives the time from a picture's data
@@ -65,7 +64,6 @@ while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code 
       '''
       return data[3]
    results.sort(key=get_time)
-### to here
 
    if len(results) == 2:
       data1 = results[0]
@@ -145,9 +143,8 @@ while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code 
    
    sleep(0.5) #the interval from which the code gets run through
    now_time = datetime.now()
-### added the code here
+
    number = 1 - number
-### to here
 
 file_path = "result.txt" 
 with open(file_path, 'w') as file:
