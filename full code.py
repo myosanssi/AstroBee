@@ -66,9 +66,11 @@ while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code 
   
 ### added the code here
    def get_time(data):
+      '''
       Gives the time from a picture's data
       :param data: choosing the picture's data
       :returns: the time the picture was taken
+      '''
       return data[3]
    results.sort(key=get_time)
 ### to here
