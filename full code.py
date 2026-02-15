@@ -12,15 +12,8 @@ list_speed = []
 
 start_time = datetime.now()
 now_time = datetime.now()
-while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code could take longer
-   cam = Camera()
-   image_path = base_folder / f"image.jpg"
-   cam.take_photo(str(image_path))
-'''
-🌌🌌this is my idea of overwriting the photos, but I am not sure if it wil work properly so I'll just write it as a comment and we can check if it will work later.🌌🌌
-this will be the code↓
-
 number = 0
+
 while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code could take longer
    cam = Camera()
    if number == 0:
@@ -28,8 +21,7 @@ while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code 
    elif number == 1:
       image_path = base_folder / f"imageB.jpg"
    cam.take_photo(str(image_path))
-'''
-   
+
    def dms_to_decimal(dms):
       '''
       Takes degrees, minutes, and seconds and converts them to decimals
