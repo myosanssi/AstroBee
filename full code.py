@@ -28,33 +28,6 @@ while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code 
    elif number == 1:
       image_path = base_folder / f"imageB.jpg"
    cam.take_photo(str(image_path))
-
-   and at the end, before the line 175 of this code, I put
-   number = 1 - number
-
-　 also, before the line 105, I need to put
-   def get_time(data):
-      Gives the time from a picture's data
-      :param data: choosing the picture's data
-      :returns: the time the picture was taken
-      return data[3]
-   results.sort(key=get_time)
-
-
-The idea of this code is that during the first while loop, the picture will be stored as "imageA.jpg" because number == 0.
-Since there is only one picture in the folder, the speed calculation will not run yet and the loop continues.
-At the end of the loop, we use
-number = 1 - number
-which changes number from 0 to 1.
-During the second loop, number == 1, so the picture will be saved as "imageB.jpg".
-Now there are two pictures in the folder, so the code processes those two images to calculate the speed.
-At the end of the second loop, number becomes 0 again (1 - 1 = 0).
-So in the third loop, the new picture is saved again as "imageA.jpg".
-This overwrites the first picture, meaning we always keep only two images while still comparing the newest image with the previous one.
-But if I do this, the order of the picture in the 'results' might not be not correct at some loop, so I put 'results.sort(key=get_time)' before we compare the two pictures.
-Im not sure how this sorting works cuz I used chat gpt for a helper,
-but basically it sorts the pictures based on the time that was extracted from the picture. (but I dont really know if we need this tbh)
-
 '''
    
    def dms_to_decimal(dms):
@@ -90,6 +63,15 @@ but basically it sorts the pictures based on the time that was extracted from th
          full_path = os.path.join(folder, filename)
          lat, lon, time = extract_data(full_path)
          results.append((filename, lat, lon, time))
+  
+### added the code here
+   def get_time(data):
+      Gives the time from a picture's data
+      :param data: choosing the picture's data
+      :returns: the time the picture was taken
+      return data[3]
+   results.sort(key=get_time)
+### to here
 
    if len(results) == 2:
       data1 = results[0]
@@ -169,7 +151,10 @@ but basically it sorts the pictures based on the time that was extracted from th
    
    sleep(0.5) #the interval from which the code gets run through
    now_time = datetime.now()
-    
+### added the code here
+   number = 1 - number
+### to here
+
 file_path = "result.txt" 
 with open(file_path, 'w') as file:
     file.write(final_speed)
