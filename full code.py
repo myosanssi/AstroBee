@@ -7,8 +7,8 @@ import math #Arij
 from picamzero import Camera
 from pathlib import Path
 
-folder = base_folder
 base_folder = Path(__file__).parent.resolve()
+folder = base_folder
 results = []
 list_speed = []
 
