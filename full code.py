@@ -1,9 +1,8 @@
-#Libraries/Imports
-from datetime import datetime, timedelta #Danah & Noah
-from exif import Image #Noah
-import os #Noah
-from time import sleep #Danah
-import math #Arij
+from datetime import datetime, timedelta
+from exif import Image
+import os
+from time import sleep
+import math
 from picamzero import Camera
 from pathlib import Path
 
@@ -16,7 +15,7 @@ start_time = datetime.now()
 now_time = datetime.now()
 number = 0
 
-while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code could take longer
+while (now_time < start_time + timedelta(minutes=9.8)):
    cam = Camera()
    if number == 0:
       image_path = base_folder / f"imageA.jpg"
@@ -66,7 +65,7 @@ while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code 
       '''
       return data[3]
    
-   results.sort(key=get_time)  ### sort the pictures in 'results' in the chronological order
+   results.sort(key=get_time) 
 
    if len(results) == 2:
       data1 = results[0]
@@ -144,7 +143,7 @@ while (now_time < start_time + timedelta(minutes=9.8)): #minutes != 10 b/c code 
    final_speed = "{:.4g}".format(average_speed(list_speed))
    print(final_speed)
    
-   sleep(0.5) #the interval from which the code gets run through
+   sleep(0.5) 
    now_time = datetime.now()
 
    number = 1 - number
