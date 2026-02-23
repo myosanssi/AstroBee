@@ -92,21 +92,21 @@ while (now_time < start_time + timedelta(minutes=9.5)): #minutes != 10 b/c code 
     if lat1 is not None and lat2 is not None and lon1 is not None and lon2 is not None:
         dis = HaversineFormula(lat1, lon1, lat2, lon2)
 
-    if dis is not None and (t2 - t1) > 2:
+    if dis is not None and (t2 - t1) > 4:
         speed = SpeedFormula(dis, t1, t2)
 
         lat1, lon1, t1 = lat2, lon2, t2
         lat2, lon2, t2 = None, None, None
         dis = None
       
-        if 6.5 < speed < 8.5:
+        if 7.0 < speed < 8.2:
             list_speed.append(speed)
    
         avg = average_speed(list_speed)
         final_speed = format(avg, ".5g")
         print(final_speed)
    
-    sleep(5) #the interval from which the code gets run through
+    sleep(7) #the interval from which the code gets run through
     now_time = datetime.now()
 
     number = 1 - number
