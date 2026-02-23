@@ -31,16 +31,16 @@ def get_position():
         datetime.now().timestamp()
     )
     
- def HaversineFormula(lat1, lon1, lat2, lon2):
-        '''
-        Calculates the shortest distance between two coordinates
-        :param lat1: latitude of the first coordinate
-        :param long1: longitude of the second coordinate
-        :param lat2: latitude of the second coordinate
-        :param long2: longitude of the second coordinate
-        :return: distance
-        '''
-        radlat1 = math.radians(lat1)
+def HaversineFormula(lat1, lon1, lat2, lon2):
+    '''
+    Calculates the shortest distance between two coordinates
+    :param lat1: latitude of the first coordinate
+    :param long1: longitude of the second coordinate
+    :param lat2: latitude of the second coordinate
+    :param long2: longitude of the second coordinate
+    :return: distance
+    '''
+    radlat1 = math.radians(lat1)
     radlat2 = math.radians(lat2)
     radlon1 = math.radians(lon1)
     radlon2 = math.radians(lon2)
@@ -54,23 +54,23 @@ def get_position():
     return distance
      
 def SpeedFormula(distance, time1, time2):
-        '''
-        Calculates the speed
-        :param distance: distance calculated with the previous function
-        :param time1: Unix time of the first picture
-        :param time2: Unix time of the second picture
-        :return: speed between two coordinates
-        '''
-        speed = distance / (time2 - time1)
-        return speed
+    '''
+    Calculates the speed
+    :param distance: distance calculated with the previous function
+    :param time1: Unix time of the first picture
+    :param time2: Unix time of the second picture
+    :return: speed between two coordinates
+    '''
+    speed = distance / (time2 - time1)
+    return speed
     
- def average_speed(list_speed):
-            '''
-            Calculate the average speed from the list
-            :param list_speed: the list that contains all the speeds 
-            :return: the average speed
-            '''
-            return sum(list_speed) / len(list_speed)
+def average_speed(list_speed):
+    '''
+    Calculate the average speed from the list
+    :param list_speed: the list that contains all the speeds 
+    :return: the average speed
+    '''
+    return sum(list_speed) / len(list_speed)
 
 while (now_time < start_time + timedelta(minutes=9.5)): #minutes != 10 b/c code could take longer
     if number == 0:
