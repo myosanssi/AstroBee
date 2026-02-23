@@ -17,6 +17,7 @@ number = 0
 lat1, lon1, t1 = None, None, None
 lat2, lon2, t2 = None, None, None
 dis = None
+final_speed = "0"
 
 cam = Camera()
 
@@ -29,7 +30,47 @@ def get_position():
         point.longitude.degrees,
         datetime.now().timestamp()
     )
+    
+ def HaversineFormula(lat1, lon1, lat2, lon2):
+        '''
+        Calculates the shortest distance between two coordinates
+        :param lat1: latitude of the first coordinate
+        :param long1: longitude of the second coordinate
+        :param lat2: latitude of the second coordinate
+        :param long2: longitude of the second coordinate
+        :return: distance
+        '''
+        radlat1 = math.radians(lat1)
+    radlat2 = math.radians(lat2)
+    radlon1 = math.radians(lon1)
+    radlon2 = math.radians(lon2)
 
+    dlat = radlat2 - radlat1
+    dlon = radlon2 - radlon1
+
+    haversine = math.sin(dlat/2)**2 + math.cos(radlat1) * math.cos(radlat2) * math.sin(dlon/2)**2
+    angle = 2 * math.atan2(math.sqrt(haversine), math.sqrt(1-haversine))
+    distance = 6371 * angle
+    return distance
+     
+def SpeedFormula(distance, time1, time2):
+        '''
+        Calculates the speed
+        :param distance: distance calculated with the previous function
+        :param time1: Unix time of the first picture
+        :param time2: Unix time of the second picture
+        :return: speed between two coordinates
+        '''
+        speed = distance / (time2 - time1)
+        return speed
+    
+ def average_speed(list_speed):
+            '''
+            Calculate the average speed from the list
+            :param list_speed: the list that contains all the speeds 
+            :return: the average speed
+            '''
+            return sum(list_speed) / len(list_speed)
 
 while (now_time < start_time + timedelta(minutes=9.5)): #minutes != 10 b/c code could take longer
     if number == 0:
@@ -48,69 +89,20 @@ while (now_time < start_time + timedelta(minutes=9.5)): #minutes != 10 b/c code 
         lat2, lon2, t2 = lat, lon, t
         print(lat2, lon2, t2)
 
-    def HaversineFormula(lat1, lon1, lat2, lon2):
-        '''
-        Calculates the shortest distance between two coordinates
-        :param lat1: latitude of the first coordinate
-        :param long1: longitude of the second coordinate
-        :param lat2: latitude of the second coordinate
-        :param long2: longitude of the second coordinate
-        :return: distance
-        '''
-        radlat1 = math.radians(lat1)
-        radlat2 = math.radians(lat2)
-        radlon1 = math.radians(lon1)
-        radlon2 = math.radians(lon2)
-            
-        dlat = radlat2 - radlat1
-        dlon = radlon2 - radlon1
-            
-        haversine = math.sin(dlat/2)**2 + math.cos(radlat1) * math.cos(radlat2) * math.sin(dlon/2)**2
-        angle = 2 * math.atan2(math.sqrt(haversine),math.sqrt(1-haversine))
-        distance = 6371 * angle
-            
-        return distance
-
     if lat1 is not None and lat2 is not None and lon1 is not None and lon2 is not None:
         dis = HaversineFormula(lat1, lon1, lat2, lon2)
 
-    def SpeedFormula(distance, time1, time2):
-        '''
-        Calculates the speed
-        :param distance: distance calculated with the previous function
-        :param time1: Unix time of the first picture
-        :param time2: Unix time of the second picture
-        :return: speed between two coordinates
-        '''
-        speed = distance/(time2 - time1)
-        return speed
-
-    if dis != None:
+    if dis is not None:
         speed = SpeedFormula(dis, t1, t2)
+
+        lat1, lon1, t1 = lat2, lon2, t2
+        lat2, lon2, t2 = None, None, None
+        dis = None
       
-        def into_the_list(speed):
-            '''
-            Get the speeds from "SpeedFormula" and add them to the list called "list_speed"
-            :param speed: the calculated speed of the ISS
-            :return: the list of the speed ("list_speed")
-            '''
-            list_speed.append(speed)
-      
-        into_the_list(speed)
-         
-        def average_speed(list_speed):
-            '''
-            Calculate the average speed from the list
-            :param list_speed: the list that contains all the speeds 
-            :return: the average speed
-            '''
-            sum_speed = 0
-            for num in list_speed:
-                sum_speed += num
-                average_speed = float(sum_speed/len(list_speed))
-            return average_speed
+        list_speed.append(speed)
    
-        final_speed = "{:.4g}".format(average_speed(list_speed))
+        avg = average_speed(list_speed)
+        final_speed = f"{avg:.5f}".rstrip('0').rstrip('.')
         print(final_speed)
    
     sleep(0.5) #the interval from which the code gets run through
