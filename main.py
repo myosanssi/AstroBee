@@ -99,7 +99,7 @@ while (now_time < start_time + timedelta(minutes=9.5)): #minutes != 10 b/c code 
         lat2, lon2, t2 = None, None, None
         dis = None
       
-        if 7.0 < speed < 8.2:
+        if 6.5 < speed < 8.5:
             list_speed.append(speed)
    
         if len(list_speed) >= 3:
