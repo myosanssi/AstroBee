@@ -102,9 +102,10 @@ while (now_time < start_time + timedelta(minutes=9.5)): #minutes != 10 b/c code 
         if 7.0 < speed < 8.2:
             list_speed.append(speed)
    
-        avg = average_speed(list_speed)
-        final_speed = format(avg, ".5g")
-        print(final_speed)
+        if len(list_speed) >= 3:
+            avg = average_speed(list_speed)
+            final_speed = format(avg, ".5g")
+            print(final_speed)
    
     sleep(7) #the interval from which the code gets run through
     now_time = datetime.now()
